@@ -9,13 +9,21 @@ class MyComponent extends React.Component {
             { id: 'abcjob3', title: 'Project Manager', salary: '1500' }
         ]
     }
+    addNewJob = (job) => {
+        console.log('>>>Check Job da truyen vao: ', job)
+        this.setState({
+            arrJobs: [...this.state.arrJobs, job]
+        })
+    }
 
 
 
     render() {
         return (
             <>
-                <AddComponent />
+                <AddComponent
+                    addNewJob={this.addNewJob}
+                />
 
 
 

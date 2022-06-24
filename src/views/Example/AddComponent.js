@@ -18,6 +18,11 @@ class AddComponent extends React.Component {
     onClickName = (event) => {
         event.preventDefault()
         console.log('>>>Check data input: ', this.state)
+        this.props.addNewJob({
+            id: Math.floor(Math.random() * 1001),
+            title: this.state.title,
+            salary: this.state.salary
+        })
 
     }
     render() {
