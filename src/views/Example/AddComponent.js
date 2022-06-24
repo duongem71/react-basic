@@ -17,11 +17,19 @@ class AddComponent extends React.Component {
     }
     onClickName = (event) => {
         event.preventDefault()
+        if (this.state.title === '' || this.state.salary === '') {
+            alert('Not NULL')
+            return;
+        }
         console.log('>>>Check data input: ', this.state)
         this.props.addNewJob({
             id: Math.floor(Math.random() * 1001),
             title: this.state.title,
             salary: this.state.salary
+        })
+        this.setState({
+            title: '',
+            salary: ''
         })
 
     }
